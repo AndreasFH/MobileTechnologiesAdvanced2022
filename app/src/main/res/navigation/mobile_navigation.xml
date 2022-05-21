@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.mobiletechnologiesadvanced2022.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.mobiletechnologiesadvanced2022.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.mobiletechnologiesadvanced2022.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" >
+        <action
+            android:id="@+id/action_dataFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_cityWeatherFragment"
+            app:destination="@id/cityWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityWeatherFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.CityWeatherFragment"
+        android:label="fragment_city_weather"
+        tools:layout="@layout/fragment_city_weather" >
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cityWeatherFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readFeedbackFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.ReadFeedbackFragment"
+        android:label="fragment_read_feedback"
+        tools:layout="@layout/fragment_read_feedback" >
+        <action
+            android:id="@+id/action_readFeedbackFragment_to_sendFeedbackFragment"
+            app:destination="@id/sendFeedbackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendFeedbackFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.SendFeedbackFragment"
+        android:label="fragment_send_feedback"
+        tools:layout="@layout/fragment_send_feedback" >
+        <action
+            android:id="@+id/action_sendFeedbackFragment_to_readFeedbackFragment"
+            app:destination="@id/readFeedbackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherMqttFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.WeatherMqttFragment"
+        android:label="fragment_weather_mqtt"
+        tools:layout="@layout/fragment_weather_mqtt" />
+    <fragment
+        android:id="@+id/localMessageFragment"
+        android:name="com.example.mobiletechnologiesadvanced2022.LocalMessageFragment"
+        android:label="fragment_local_message"
+        tools:layout="@layout/fragment_local_message" />
+</navigation>
